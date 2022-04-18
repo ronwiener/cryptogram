@@ -101,7 +101,6 @@ class App extends Component {
 
     for (ctr = 0; ctr < quote.length; ctr++) {
       let currentLetter = quote.charAt(ctr);
-      const log = (arg) => console.log(arg);
 
       //preserve punctuation and spaces
       if (
