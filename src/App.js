@@ -48,7 +48,6 @@ class App extends Component {
 
   async getQuote() {
     let url = "https://api.quotable.io/random";
-
     try {
       let response = await fetch(url, {
         method: "GET",
@@ -104,7 +103,7 @@ class App extends Component {
       let currentLetter = quote.charAt(ctr);
       const log = (arg) => console.log(arg);
 
-      //preserve punctuation
+      //preserve punctuation and spaces
       if (
         currentLetter === " " ||
         currentLetter === "." ||
