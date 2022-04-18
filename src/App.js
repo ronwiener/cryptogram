@@ -194,9 +194,11 @@ class App extends Component {
           container
           direction="column"
           alignItems="center"
-          style={{ marginTop: 10 }}
+          style={{ marginTop: 10, backgroundColor: "lightBlue" }}
         >
-          <h2>Cryptogram Puzzle</h2>
+          <Grid item>
+            <h2 style={{ fontFamily: "Fira Sans" }}>Cryptogram Puzzle</h2>
+          </Grid>
           <Grid item>
             <Stack direction="row" spacing={4}>
               <Button
