@@ -1,0 +1,13 @@
+.spinner-wrapper{
+    position: absolute;
+    left: 42%;
+    transform: translateX(50%);
+    top: 40%;
+}
+
+.heading{
+    color: red;
+    position: relative;
+    margin-bottom: 60px;
+    right: 30%;
+}

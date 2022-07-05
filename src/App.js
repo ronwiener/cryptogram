@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import WordSpace from "./WordSpace";
+import Spinner from "./Spinner";
 
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -116,10 +117,16 @@ class App extends Component {
         //assigns the quote letters into an index number of their alphabet position
         let originalIndex = temp.search(currentLetter);
 
+        /*use this console.log to help with input boxes
+        console.log(originalIndex, currentLetter);  */
+
         /*rearranged.charAt is the randomized alphabet letters 
         matched up to original alphabet position indexes of the quote,
         so index 3 of the alphabet(D) will be matched to index 3 of the rearranged alphabet */
         finalQuote += rearranged.charAt(originalIndex);
+
+        /*use this console.log to help with input boxes
+        console.log(rearranged.charAt(originalIndex));  */
       }
     }
 
@@ -135,15 +142,15 @@ class App extends Component {
     let rearrangedLetter1 = "";
     let rearrangedLetter2 = "";
     let quote1 = quote.replace(/[/?/-;:,'." "]/g, "");
-    let quote2 = quote.replace(/[/?/-;:,'." "]/g, "");
+    // let quote2 = quote.replace(/[/?/-;:,'." "]/g, "");
 
     randomQuoteLetter1 = quote1[Math.floor(Math.random() * quote1.length)];
     randomIdx1 = temp.search(randomQuoteLetter1);
     rearrangedLetter1 = rearranged.charAt(randomIdx1);
 
-    randomQuoteLetter2 = quote2[Math.floor(Math.random() * quote2.length)];
+    randomQuoteLetter2 = quote1[Math.floor(Math.random() * quote1.length)];
     if (randomQuoteLetter1 === randomQuoteLetter2) {
-      randomQuoteLetter2 = quote2[Math.floor(Math.random() * quote2.length)];
+      randomQuoteLetter2 = quote1[Math.floor(Math.random() * quote1.length)];
     }
     randomIdx2 = temp.search(randomQuoteLetter2);
     rearrangedLetter2 = rearranged.charAt(randomIdx2);
@@ -181,12 +188,7 @@ class App extends Component {
   render() {
     //show loading screen if state values not set
     if (this.state.wordObjects.length < 1) {
-      return (
-        <div>
-          <p>Cryptogram Puzzle</p>
-          <p>Loading...</p>
-        </div>
-      );
+      return <Spinner />;
     } else {
       return (
         <Grid
