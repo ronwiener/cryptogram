@@ -110,6 +110,7 @@ class App extends Component {
         currentLetter === "," ||
         currentLetter === ";" ||
         currentLetter === "'" ||
+        currentLetter === "-" ||
         currentLetter === ":"
       ) {
         finalQuote += currentLetter;
